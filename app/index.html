@@ -6,9 +6,10 @@
   
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
   <link rel="stylesheet" type="text/css" href="css/app.css"/>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
-<body ng-cloak>
-    
+<body ng-cloak>    
 
     <main class="container"> 
 
@@ -17,12 +18,12 @@
                 <img class="col-md-3 col-xs-6" src="img/main_logo.png">
             </a> 
                  
-                <div class="progress col-md-4">
-                    <div class="progress-bar-start"></div>
-                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
-                        <span class="sr-only"></span>
-                    </div>
-                </div> 
+            <div class="progress col-md-4">
+                <div class="progress-bar-start"></div>
+                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+                    <span class="sr-only"></span>
+                </div>
+            </div> 
                                
         </header>
         
@@ -44,16 +45,31 @@
         <footer class="panel-footer center">
             <p class="text-center">Yonder</p>
         </footer>
-        
 
     </main>
+    <script type="text/javascript">
+        $("<div id='tooltip'></div>").css({
+            position: "absolute",
+            display: "none",
+            border: "1px solid #fdd",
+            padding: "2px",
+            "background-color": "#fee",
+            opacity: 0.80
+        }).appendTo("body");
+    </script>
 
     <!-- Libs -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="/lib/bootstrap.js"></script>
-    <script src="/lib/underscore-min.js"></script>  
+    
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script type="text/javascript" src="/lib/bootstrap.js"></script>
+    <script type="text/javascript" src="/lib/underscore-min.js"></script>  
     <script type="text/javascript" src="lib/angular/angular.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+    <script type="text/javascript" src="lib/jquery.flot.js"></script>
+    <script type="application/javascript" src="lib/persistence.js"></script>
+    <script type="application/javascript" src="lib/persistence.store.sql.js"></script>
+    <script type="application/javascript" src="lib/persistence.store.websql.js"></script>
 
     <!-- Dashboard -->
     <script type="text/javascript" src="modules/dashboard/dashboardController.js"></script>
@@ -63,9 +79,15 @@
 
     <!-- Income -->
     <script type="text/javascript" src="modules/income/incomeController.js"></script>
-    <script type="text/javascript" src="modules/income/incomeService.js"></script>
-<!-- 
-    <script type="text/javascript" src="js/routes.js"></script>
-   -->
+   <!--  // <script type="text/javascript" src="modules/income/incomeService.js"></script> -->
+
+    <!-- AddIncome -->
+    <script type="text/javascript" src="modules/addIncome/addIncomeController.js"></script>
+
+    <!-- Common -->
+    <script type="text/javascript" src="modules/common/dataService.js"></script>
+    <script type="text/javascript" src="modules/common/helpersService.js"></script>
+    <script type="text/javascript" src="modules/common/flotService.js"></script>
+
 </body>
 </html>
